@@ -1,0 +1,34 @@
+site_name: resop docs
+site_url: https://cnsc-dev.pages.in2p3.fr/resop/
+site_dir: public
+theme: 
+  name: material
+  palette:
+    scheme: default
+    primary: amber
+  features:
+    - navigation.tabs
+    - navigation.top
+    - header.autohide
+  icon:
+    repo: fontawesome/brands/gitlab
+
+repo_url: https://gitlab.in2p3.fr/cnsc-dev/resop
+repo_name: cnsc-dev/resop
+#edit_uri: docs/
+
+markdown_extensions:
+- toc:
+    permalink: "#"
+
+nav:
+  - Home: 'index.md'
+  - Install: 
+    - Installation: 'install/install.md'
+    - Deployment: 'install/deploy.md'
+  - Use:
+    - Overview: 'use/overview.md'
+    - Usage: 'use/usage.md'
+    - Customise: 'use/implementation.md'
+    - Code structure: 'use/structure.md'
+  - Reference: 'reference.md'
