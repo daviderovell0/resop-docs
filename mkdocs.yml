@@ -11,11 +11,11 @@ theme:
     - navigation.top
     - header.autohide
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/github
 
-repo_url: https://gitlab.in2p3.fr/cnsc-dev/resop
-repo_name: cnsc-dev/resop
-#edit_uri: docs/
+repo_url: https://github.com/daviderovell0/resop
+repo_name: daviderovell0/resop
+
 
 markdown_extensions:
 - toc:
@@ -32,3 +32,5 @@ nav:
     - Customise: 'use/implementation.md'
     - Code structure: 'use/structure.md'
   - Reference: 'reference.md'
+  - Develop:
+    - Implementation: 'develop/implementation.md'
