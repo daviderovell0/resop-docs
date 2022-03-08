@@ -30,7 +30,8 @@ nav:
     - Overview: 'use/overview.md'
     - Usage: 'use/usage.md'
     - Customise: 'use/implementation.md'
-    - Code structure: 'use/structure.md'
   - Reference: 'reference.md'
   - Develop:
     - Implementation: 'develop/implementation.md'
+    - Dev cluster: 'develop/vagrantcluster.md'
+    - Development Guide: 'develop/development.md'
