@@ -12,7 +12,9 @@ All endpoints implementing commands and operations follow this structure:
 
 All API communcation is done via JSON format.
 
-## Command
+> All operators are defined in `src/operators` in the source code. Check the reference for more information
+
+## Commands
 Three types of HTTP requests are available for a command: 
 #### GET `{API}/{operator}/commands`
 Lists all the supported commands for the given {operator}
@@ -21,18 +23,17 @@ Lists all the supported commands for the given {operator}
 Fetches a single {command} info and supported options for the given {operator} 
 
 #### POST `{API}/{operator}/cmd/:{command}`
-Runs the actual command. Options, such as flags and stdin arguments can be defined in the POST body, such as:
+Runs the actual command. Allowed options (flags) can be defined in the POST body. Note that not all flags of a specific command might be available: a command definition in the API might choose to filter out some options.  
 
 ```json
 {
   "input": "input",
-  "options1": "value",
-  "options2": "value",
+  "option1": "value",
+  "option2": "value",
   ...
 }
 ```
-
-Supported commands with the appropriate flags and options are defined via YAML. All commands for a given operator are defined in `operators/{operator}/commands.yml` in the source code, Check ?? for more info on how commands are defined and the reference (or source code!) for a list of all operators.
+**Note**: `input = stdin`. Arguments of commands are always taken from the *input* field for the submitted POST request body.
 
 ## Operations
 Three types of HTTP requests are available for an *operation*: 
@@ -47,24 +48,12 @@ Runs the actual operation. Options can be defined in the POST body in the same w
 
 ```json
 {
-  "input": "input",
-  "options1": "value",
-  "options2": "value",
+  "option1": "value",
+  "option2": "value",
+  "option3": "value",
   ...
 }
 ```
 
-Supported operations with options are defined via JavaScript files named after the *operation*. All operations for a given operator are defined in `operators/{operator}/operations/{myOperation}.js` in the source code. <br> Check ?? for more info on how commands are defined and the reference (or source code!) for a list of all operators.
+Supported operations with options are defined via JavaScript files named after the *operation*. All operations for a given operator are defined in `operators/{operator}/operations/{myOperation}.js` in the source code.
 
-## User and authentication important notes
-Any endpoint is run by a specific user  onlyafter successful authentication to the API.  It follows that, to avoid security and unwanted identity appropriation:
-```
-API username == cluster username
-```
-API admins must ensure that the above statement is respected by using or implementing user management methods appropriate for their system.
-
-##### Example 1
-`{{API}}/user/opn/createClusterUser` in a system with LDAP-based authentication should create a user in LDAP at the same time as a user in the API database.
-
-##### Example 2
-The bundled operation `db/opn/createUser` is used only after successful user creation in the HPC cluster.
