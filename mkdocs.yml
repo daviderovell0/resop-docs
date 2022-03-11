@@ -30,7 +30,7 @@ nav:
     - Overview: 'use/overview.md'
     - Authentication: 'use/auth.md'
     - Usage: 'use/usage.md'
-    - Customise: 'use/implementation.md'
+    - Customise: 'use/customise.md'
   - Reference: 'reference.md'
   - Develop:
     - Implementation: 'develop/implementation.md'
