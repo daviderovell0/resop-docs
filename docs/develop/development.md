@@ -65,3 +65,8 @@ npm run prod
 Commands and operations are effetively submitted on the remote cluster 
 after a connection attempt has made with the information provided in the JWT
 token in the HTTP request. The token is granted after sucessful authentication of a cluster user.
+
+## Development environment
+[ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) are used for code formatting and help during development. See the configuration files in the repository base for more info.  
+
+`.vscode` settings in the repository folder allow for automatic formatting when saving with the VS Code IDE. 

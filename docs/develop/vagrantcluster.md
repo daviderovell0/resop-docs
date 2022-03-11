@@ -3,6 +3,9 @@ resop comes with "recipes" to build an HPC test cluster with 6 VMs that can be h
 
 ## Pre-requisites
 
-- Vagrant
-- Ansible
-- VirtualBox
+- [Vagrant](https://www.vagrantup.com/)
+- [Ansible](https://www.ansible.com/)
+- [VirtualBox](https://www.virtualbox.org/)
+
+## Install & use
+Check the README file in the `vagrantcluster/` folder in the main repository. 

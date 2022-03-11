@@ -34,5 +34,5 @@ nav:
   - Reference: 'reference.md'
   - Develop:
     - Implementation: 'develop/implementation.md'
-    - Dev cluster: 'develop/vagrantcluster.md'
+    - Local test cluster: 'develop/vagrantcluster.md'
     - Development Guide: 'develop/development.md'
