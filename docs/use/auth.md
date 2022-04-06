@@ -3,7 +3,7 @@ Instead, it leverages on the authentication of the remote Linux cluster. It can 
 a user can access the API (and therefore access the remote cluster) with the SSH credentials used to connect to that cluster. <br>
 Consequently, all the commands and operations run via the API will have the same priviledges and rights of the authenticated user running that operation. 
 
-> Check the [authentication](/resop/develop/implementation#Authentication) section under Develop for more informaton on the internal
+> Check the [authentication](/resop-docs/develop/implementation#Authentication) section under Develop for more informaton on the internal
 authentication process and security considerations. 
 
 ## Process

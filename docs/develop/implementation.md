@@ -30,7 +30,7 @@ The classes Command and Operation provide methods to define respective actions. 
 # files involved:
 operators/*
 ```
-This is where the actual actions are defined: only this section needs to be edited when creating new API commands or operations, the API will import them automatically if their definition is correct and if the folder structure is respected. See [here](/resop/use/customise) for more information on how to add new actions.
+This is where the actual actions are defined: only this section needs to be edited when creating new API commands or operations, the API will import them automatically if their definition is correct and if the folder structure is respected. See [here](/resop-docs/use/customise) for more information on how to add new actions.
 ## Authentication
 **resop** is stateless: everytime a user attempts authentication, resop attempts to connect via SSH to the remote cluster with the credentials given by the user. 
 

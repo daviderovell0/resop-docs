@@ -11,7 +11,7 @@ See the [deployment page](/resop/install/deploy) for example configurations.
 
 ### Configuration to use the test cluster (vagrantcluster)
 
-**resop** comes with a test cluster, outlined in the [previous section](/resop/develop/vagrantcluster), called vagrantcluster. The cluster can be used to test newly implemented functionalities in a virtual HPC environment, maximizing portability to a real environment.   
+**resop** comes with a test cluster, outlined in the [previous section](/resop-docs/develop/vagrantcluster), called vagrantcluster. The cluster can be used to test newly implemented functionalities in a virtual HPC environment, maximizing portability to a real environment.   
 
 Once vagrantcluster is up and running, your `.env` file should look similar to:
 ```bash

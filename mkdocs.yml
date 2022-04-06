@@ -1,5 +1,5 @@
 site_name: resop docs
-site_url: https://cnsc-dev.pages.in2p3.fr/resop/
+site_url: https://daviderovell0.github.io/resop-docs/
 site_dir: public
 theme: 
   name: material

@@ -5,12 +5,12 @@ command or an operation. Commands and operations are both subpaths of an operato
 /{operator}/cmd/{command}     <- command   
 /{operator}/opn/{operation}   <- operation
 ```
-More details about endpoints in the [overview](/resop/use/overview).
+More details about endpoints in the [overview](/resop-docs/use/overview).
 
 Most endpoints are protected and can be accessed only with a token post-authentication. More in the
-[auth](/resop/use/auth) section.
+[auth](/resop-docs/use/auth) section.
 
-A list of all the available endpoints can be found in the [reference](/resop/reference).
+A list of all the available endpoints can be found in the [reference](/resop-docs/reference).
 
 ## API calls (requests)
 
