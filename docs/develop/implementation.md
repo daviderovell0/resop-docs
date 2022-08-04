@@ -24,7 +24,9 @@ The main idea is that endpoints representing commands and operations are not imp
 # files involved :
 backend/*
 ```
-The classes Command and Operation provide methods to define respective actions. They make calls to the SSH client (`SSH2Agent`) class to perform remote operations on behalf of the authenticated user. Respective *Utils classes are used to import commands and operations defined in the `operators` folder.
+The classes Command and Operation provide methods to define respective actions. They make calls to the SSH client (`SSH2Utils`) class to perform remote operations on behalf of the authenticated user. Respective *Utils classes are used to import commands and operations defined in the `operators` folder.
+
+The SSH utility functions are implemented in C++ using the libssh2 library in the `backend/addons*` folder. They provide the core of the API for remote execution, they are exposed to NodeJS via the node-addon-api and then to Command and Operation logic via `SSH2utils`. All functions provided by this class are synchronous, the main reason behind implementing a custom SSH agent rather then using an existing one such as NPM's ssh2. 
 #### Operators
 ```
 # files involved:

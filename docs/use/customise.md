@@ -73,6 +73,11 @@ To create or edit an operation, use an instance of the *Operation* class. This c
 
 ```js
 import Operation from '../../../backend/Operation';
+import * as otherOPN from '../../operator/operations/otherOPN';
+
+/**
+ * @summary Description
+ */
 
 // (mustdo) Instatiate a new Operation:
 const opn = new Operation();
@@ -88,18 +93,18 @@ opn.defineOptions({
 // Create an execution function that will constitute the body of the operation.
 // This fucntion will be executed on a POST request to this operation corresponding
 // endpoint.
-// Can contain any arbitrary logic
-async function exec() {
+// Can contain any arbitrary logic, be sync or async
+function exec() {
   // an Operation can run a command in the remote cluster and read its stdout.
   // The command is executed on behalf of the API user (=cluser user) running it.
   // Error handling is NOT need on commands, it is already done by the Operation.
   // Commands can be of 2 types:
 
   // standard strings
-  const stdout1 = await opn.runCommand('my_command --flag option input');
+  const stdout1 = opn.runCommand('my_command --flag option input');
 
   // use a command defined in this operator's commands, as it would be in a POST request
-  const stdout2 = await opn.runCommandDefined({
+  const stdout2 = opn.runCommandDefined({
     command: 'command_name',
     option1: 'option_argument',
     input: 'stdin for command name',
@@ -118,6 +123,18 @@ async function exec() {
     opn.error('no output from commands!');
   }
 
+  /**
+   * other operation can be imported from the correspoding file (see example import at
+   * the top of the file). Then it can be used as a command, error handling is also taken care
+   * by resop
+   */
+  const passwordHash = opn.runOperation(otherOPN, {
+    field: opn.options.option1,
+    option: 'true',
+  });
+
+  opn.addLog(passwordHash);
+
   // the result of the operation
   return out;
 }
@@ -127,6 +144,7 @@ opn.set(exec);
 
 // (mustdo) export the Operation instance
 export default opn;
+
 
 ```
 Follow the comments for an explaination of each step.

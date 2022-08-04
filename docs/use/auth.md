@@ -20,7 +20,7 @@ curl -X POST -d "username=value1&password=value2" https://resop:3000/auth/opn/lo
 {
     "success": true,
     "operation": "auth:login",
-    "output": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyb3ZlbGxpIiwia2V5UGF03336Ii9ob21lL2RhdmlkZXJvdmVsbDAvcmVzb3BrZXlzL2Y4OWJhMDg1M2M5Njc5YzAiLCJrZXlQYXNzcGhyYXNlIjoiS0YwbHRUb0dPSjZWT0YiLCJpYXQiOjE2NDY3NTczODl9._9kKcb3iM_6_2bKS_VXPcu-NlxNWoin5fFcsC2Omysg",
+    "output": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyb3ZlbGxpIiwia2V5UGF03336Ii9ob21lL2RhdmlkZXJvdmVsbDAvcmVzb3BrZXlzL2Y4OWJhMDg1M2M5Njc5YzAiLCJrZXlQYXNzcGhyYXNlIjoiS0YwbHRUb0dPSjZWT0YiLCJpYXQiOjE2NDY3NTczODl9._9kKcb3iM_6_2bKS_VXPcu-NlxNWoin5fFc4C2Omysg",
     "log": [
         "user drovelli attempting to login...",
         "successful login"

@@ -18,11 +18,13 @@ Each endpoint can be called with both GET and POST.
 
 - **GET** requests return informative data about the endpoint: description and available options.
 They are internal to the API and will not interact with the remote cluster.
-- **POST** requests perform an action and return the its result output with additional information such as possible error details and logs. They often, but not always, interact with 
-the remote cluster.
+- **POST** requests perform an action and return the its result output with additional information such as possible error details and logs. They often, but not always, interact with the remote cluster.
 
-Request options for both commands and operations allow for specific oprtions. Some option might
-be mandatory depending on the implementation of the action.  <br> A good workflow is to use **GET** to retrieve the available options and then use **POST** with the right options.
+Key-value options in the request body (i.e. form fields) for both commands and operations allow for specific options. Some option might
+be mandatory depending on the implementation of the action. *All fields are sanitized to filter special shell characters*;
+this is done to avoid command injection.
+
+A good workflow is to use **GET** to retrieve the available options and then use **POST** with the right options.
 
 Additional GET (only) endpoints in the following format:
 ```
@@ -124,3 +126,14 @@ possible examples of responses
     "log": "message"
 }
 ```
+## core/ endpoints
+Special "general" endpoints are leaves of the `core/` operator. These endpoints provide direct access
+to the main SSH functionalities:
+
+- `core/opn/run`: run any remote command without shell special characters filter (pipe, & etc. allowed)
+- `core/opn/getFile`, `core/opn/sendFile`: [scp](https://www.ssh.com/academy/ssh/scp) files from
+and to the remote cluster
+- `core/opn/getFolder`, `core/opn/sendFolder`: [scp](https://www.ssh.com/academy/ssh/scp) doler from
+and to the remote cluster
+
+Other endpoints are specific and can be used (or built) to perform complex shell operations.

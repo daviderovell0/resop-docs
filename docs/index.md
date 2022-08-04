@@ -2,20 +2,20 @@
 
 **resop** is a RESTful API to manage user, admin, job, (any) *shell* operations in a remote Linux cluster. It is specifically targeted to a supercomputer / HPC cluster but it can be used for any machine accessible via SSH.
 
-Think of it as:
+It is:
 
-- A thin layer over classic supercomputer Linux systems to make them easily accessible to third party applications, or anything talking HTTP.
+- A thin layer over classic HPC (and not) Linux clusters to make them easily accessible to third party applications, or anything talking HTTP.
 - An SSH client with a library of common HPC commands and operations
-- A tool to turn your long, manual command routines into a single `curl -X POST ...`
+- A tool to turn your long, manual command routines into a single POST request.
 
 | ![media/api_url_explained.png](media/explanatory_diagram.svg) |
 |:--:|
 | High-level interaction diagram of the resop API and some typical applications |
 
 ## Features
-- Run remote **Linux shell commands** through **HTTP** directly to a HPC cluster and get a JSON response.
+- Run remote **Linux shell commands** through **HTTP** directly to a remote cluster and get a JSON response.
 - Commands and arbitrary JavaScript are chained together to create more complex **Operations** that can be run in the same way as commands.
-- A library of operations of typical HPC commands and routines is organized into operators. Some examoles: **slurm, ldap, utils**(Linux)
+- A library of operations of typical HPC commands and routines is organized into operators. Some examples: **slurm, ldap, utils**
 - *Simple customisation*: you can implement custom operations without dealing with API logic. Just create a JavaScript file using the provided class, list series of commands or use JavaScript power for server-side operations such as parsing strings.
 - *Secure commands and operations*: every endpoint is accessed prior token-based authentication and will run remote operations with the privildeges of the corresponding authenticated user.  
 - *Quick setup*: NodeJS and MariaDB* are the only dependencies, one file configuration and the API is ready to be used
